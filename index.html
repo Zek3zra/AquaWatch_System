@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaWatch | Initializing System</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Forcing Dark Mode for the loader for that premium hacker/tech vibe */
+            --bg-main: #000000;
+            --text-main: #ffffff;
+            --text-muted: #888888;
+            --brand-primary: #38bdf8;
+        }
+
+        body, html {
+            margin: 0; padding: 0; 
+            width: 100%; height: 100%;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, sans-serif;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            overflow: hidden;
+        }
+
+        .loader-container {
+            display: flex; flex-direction: column; align-items: center;
+            width: 100%; max-width: 320px;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .brand {
+            display: flex; align-items: center; gap: 12px;
+            font-size: 1.8rem; font-weight: 700; letter-spacing: -0.03em;
+            margin-bottom: 32px;
+        }
+
+        .brand-indicator {
+            width: 14px; height: 14px;
+            background-color: var(--brand-primary);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--brand-primary);
+            animation: pulseBlue 1.5s infinite;
+        }
+
+        .progress-bg {
+            width: 100%; height: 4px;
+            background-color: #222222;
+            border-radius: 4px; overflow: hidden;
+            margin-bottom: 16px;
+        }
+
+        .progress-bar {
+            width: 0%; height: 100%;
+            background-color: var(--brand-primary);
+            box-shadow: 0 0 10px var(--brand-primary);
+            /* This animation takes exactly 2.5 seconds to fill */
+            animation: fillBar 2.5s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+        }
+
+        .status-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.05em;
+            text-align: center;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulseBlue {
+            0% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.5); }
+            70% { box-shadow: 0 0 0 12px rgba(56, 189, 248, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
+        }
+
+        @keyframes fillBar {
+            0% { width: 0%; }
+            30% { width: 45%; }
+            70% { width: 85%; }
+            100% { width: 100%; }
+        }
+
+        /* Fade out effect before redirecting */
+        .fade-out {
+            animation: fadeOut 0.5s ease forwards !important;
+        }
+        @keyframes fadeOut {
+            from { opacity: 1; transform: translateY(0); }
+            to { opacity: 0; transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loader-container" id="loaderBox">
+        <div class="brand">
+            <div class="brand-indicator"></div>
+            <span>AquaWatch</span>
+        </div>
+        
+        <div class="progress-bg">
+            <div class="progress-bar"></div>
+        </div>
+        
+        <div class="status-text" id="status-text">Booting Telemetry Engine...</div>
+    </div>
+
+    <script>
+        // Array of "Techy" loading messages for your Thesis Panel
+        const messages = [
+            "Booting Telemetry Engine...",
+            "Connecting to Supabase...",
+            "Fetching ESP32 Node Data...",
+            "Establishing Secure WebSocket...",
+            "System Online."
+        ];
+
+        const statusText = document.getElementById('status-text');
+        const loaderBox = document.getElementById('loaderBox');
+        
+        // Cycle through the messages every 500 milliseconds
+        let msgIndex = 0;
+        const messageInterval = setInterval(() => {
+            msgIndex++;
+            if(msgIndex < messages.length) {
+                statusText.innerText = messages[msgIndex];
+            }
+        }, 500);
+
+        // After 2.6 seconds, trigger the fade-out animation
+        setTimeout(() => {
+            loaderBox.classList.add('fade-out');
+        }, 2600);
+
+        // After 3.0 seconds, actually redirect to your main Homepage
+        setTimeout(() => {
+            clearInterval(messageInterval);
+            window.location.href = 'Homepage.html'; 
+        }, 3000);
+    </script>
+
+</body>
+</html>

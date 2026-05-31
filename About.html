@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AquaWatch | System Documentation</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabaseClient.js"></script>
+  
+  <link rel="stylesheet" href="About.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <div class="brand-indicator"></div>
+        <span>AquaWatch</span>
+      </div>
+      
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+
+      <div class="nav-menu" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="Homepage.html">Overview</a></li>
+          <li><a href="Map.html">Live Map</a></li>
+          <li id="statisticsNav" style="display: none;"><a href="Statistics.html">Command Center</a></li>
+          <li><a href="About.html" class="active">About</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="btn-icon" id="themeToggle" aria-label="Toggle Theme">
+            <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </button>
+          <button class="btn-primary" id="authButton" onclick="window.location.href='Admin.html'">System Login</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-glow"></div>
+    <div class="container hero-content">
+      <div class="hero-pill">
+        <span class="pulse-dot"></span> Methodology & Engineering
+      </div>
+      <h1 class="hero-title">System Architecture<br>and Hardware Integration.</h1>
+      <p class="hero-subtitle">A comprehensive breakdown of the physical prototype, spatial mapping engine, and software infrastructure powering the TUPV AquaWatch network.</p>
+    </div>
+  </header>
+
+  <section class="section-padding border-top bg-surface">
+    <div class="container text-content">
+      <h2>Project Objective</h2>
+      <p>Tracking the availability of drinking water across a sprawling university campus presents a constant logistical challenge. Traditional manual checking is highly inefficient, often leaving students without access to water in critical areas.</p>
+      <p>The AquaWatch system was engineered specifically to solve this visibility issue. By utilizing localized weight measurements to determine volume, this architecture serves as a strict real-time visualization and monitoring tool. It provides students with an immediate, web-accessible map of optimal dispensers while giving administrators a centralized Command Center for rapid maintenance deployment.</p>
+    </div>
+  </section>
+
+  <section class="section-padding border-top">
+    <div class="container">
+      <div class="section-header">
+        <h2>Hardware Progression</h2>
+        <p class="text-muted">From breadboard circuitry to the final deployed enclosure, documenting the structural engineering process.</p>
+      </div>
+      
+      <div class="progression-grid">
+        
+        <div class="gallery-card">
+          <div class="image-placeholder">
+            <svg viewBox="0 0 24 24" width="32" height="32" stroke="var(--border-hover)" stroke-width="1.5" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <span class="text-muted text-sm mt-2">Upload Phase 1 Image</span>
+            </div>
+          <div class="gallery-caption">
+            <div class="phase-badge mono">PHASE 01</div>
+            <h3>Circuit Prototyping</h3>
+            <p class="text-muted">Initial breadboard testing connecting the ESP32 microcontroller to the HX711 analog-to-digital converter to verify signal processing.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="image-placeholder">
+            <svg viewBox="0 0 24 24" width="32" height="32" stroke="var(--border-hover)" stroke-width="1.5" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <span class="text-muted text-sm mt-2">Upload Phase 2 Image</span>
+            </div>
+          <div class="gallery-caption">
+            <div class="phase-badge mono">PHASE 02</div>
+            <h3>Load Cell Fabrication</h3>
+            <p class="text-muted">Securing the heavy-duty mechanical strain gauges and calibrating the raw voltage offsets against known weights.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="image-placeholder">
+            <svg viewBox="0 0 24 24" width="32" height="32" stroke="var(--border-hover)" stroke-width="1.5" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <span class="text-muted text-sm mt-2">Upload Phase 3 Image</span>
+            </div>
+          <div class="gallery-caption">
+            <div class="phase-badge mono">PHASE 03</div>
+            <h3>Structural Integration</h3>
+            <p class="text-muted">Mounting the calibrated sensors directly into the base plate of the dispenser housing ensuring load stability.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <div class="image-placeholder">
+            <svg viewBox="0 0 24 24" width="32" height="32" stroke="var(--border-hover)" stroke-width="1.5" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <span class="text-muted text-sm mt-2">Upload Phase 4 Image</span>
+            </div>
+          <div class="gallery-caption">
+            <div class="phase-badge mono">PHASE 04</div>
+            <h3>Final Deployment</h3>
+            <p class="text-muted">The fully assembled telemetry unit broadcasting real-time Wi-Fi payloads directly to the PostgreSQL cloud backend.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding border-top bg-surface">
+    <div class="container">
+      <div class="section-header">
+        <h2>Technical Architecture</h2>
+        <p class="text-muted">Deep dive into the edge logic and cloud infrastructure governing the telemetry pipeline.</p>
+      </div>
+
+      <div class="bento-grid">
+        <div class="bento-card span-2">
+          <h3>Strict Telemetry Monitoring</h3>
+          <p class="mt-2 text-muted">The system is designed purely as an active visualization tool. It completely isolates logic from complex inventory management systems, utilizing the ESP32 to focus purely on high-frequency, reliable weight conversion and secure HTTPS POST requests.</p>
+        </div>
+
+        <div class="bento-card">
+          <h3>Over-The-Air Calibration</h3>
+          <p class="mt-2 text-muted">Administrators can push absolute zero-offset commands directly to the physical ESP32 flash memory via the web queue, saving the new offset permanently into the NVRAM without physical intervention.</p>
+        </div>
+
+        <div class="bento-card">
+          <h3>WebSocket Sync</h3>
+          <p class="mt-2 text-muted">The front-end utilizes Supabase Realtime channels to inject database changes directly into the DOM, completely eliminating the need for heavy HTTP polling requests.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer border-top">
+    <div class="container footer-grid">
+      
+      <div class="footer-col brand-col">
+        <div class="footer-brand">
+          <div class="brand-indicator"></div> AquaWatch
+        </div>
+        <p class="text-muted text-sm" style="margin-bottom: 16px;">
+          Design and Development of an ESP32-Based Real-Time Water Dispenser Monitoring System.
+        </p>
+        <p class="text-muted text-sm mono">
+          © 2026 TUPV Engineering.<br>All rights reserved.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Thesis Project Team</h4>
+        <ul class="footer-list">
+          <li><strong>Rex M. Romero, Ph.D.</strong><span>Thesis Adviser</span></li>
+          <li><strong>Jerow A. Amelo</strong><span>Project Leader</span></li>
+          <li><strong>Crislyn Ernie Ogahayon</strong><span>Documentation Leader</span></li>
+          <li><strong>Byron Mojica</strong><span>Documentation Assistant</span></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Hardware & Fabrication</h4>
+        <ul class="footer-list">
+          <li><strong>Lorenz L. Camorahan</strong><span>Prototype / Fabrication Lead</span></li>
+          <li><strong>Jericho Rendon</strong><span>Prototype / Fabrication Lead</span></li>
+          <li><strong>John Frances Lavina</strong><span>Technical Assistant</span></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">System Access</h4>
+        <ul class="footer-list link-list">
+          <li><a href="Homepage.html">System Overview</a></li>
+          <li><a href="Map.html">Live Spatial Map</a></li>
+          <li><a href="Statistics.html">Command Center</a></li>
+          <li><a href="Admin.html">Admin Configuration</a></li>
+          <li><a href="About.html" class="active">Read Whitepaper</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="About.js"></script>
+</body>
+</html>
