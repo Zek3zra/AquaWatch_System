@@ -1,0 +1,22 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { 
+      "source": "/u/0/app/c452e8f90b1a4437", 
+      "destination": "/Admin.html" 
+    },
+    { 
+      "source": "/u/0/app/b931a2c41d8e7752", 
+      "destination": "/Map.html" 
+    },
+    { 
+      "source": "/u/0/app/f719b4d32a6e9921", 
+      "destination": "/Statistics.html" 
+    },
+    { 
+      "source": "/u/0/app/e840f6a70c9f5564", 
+      "destination": "/Homepage.html" 
+    }
+  ]
+}
