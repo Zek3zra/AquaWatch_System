@@ -17,6 +17,10 @@
     { 
       "source": "/u/0/app/e840f6a70c9f5564", 
       "destination": "/Homepage.html" 
+    },
+    { 
+      "source": "/u/0/app/a9b8c7d6e5f4g3h2", 
+      "destination": "/About.html" 
     }
   ]
 }

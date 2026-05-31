@@ -15,6 +15,7 @@
 </head>
 <body>
 
+  <!-- ADMIN ONLY Navigation -->
   <nav class="navbar">
     <div class="container nav-container">
       <div class="nav-brand">
@@ -28,10 +29,10 @@
 
       <div class="nav-menu" id="navMenu">
         <ul class="nav-links">
-          <li><a href="Homepage.html">Overview</a></li>
-          <li><a href="Map.html">Live Map</a></li>
-          <li><a href="Statistics.html" class="active">Command Center</a></li>
-          <li><a href="Admin.html">Hardware Config</a></li>
+          <li><a href="/u/0/app/e840f6a70c9f5564?pageId=none">Overview</a></li>
+          <li><a href="/u/0/app/b931a2c41d8e7752?pageId=monitor">Live Map</a></li>
+          <li><a href="/u/0/app/f719b4d32a6e9921?pageId=command" class="active">Command Center</a></li>
+          <li><a href="/u/0/app/c452e8f90b1a4437?pageId=config">Hardware Config</a></li>
         </ul>
         <div class="nav-actions">
           <button class="btn-icon" id="themeToggle" aria-label="Toggle Theme">
@@ -69,6 +70,7 @@
 
     <main class="admin-content">
       
+      <!-- VIEW 1: LIVE DASHBOARD -->
       <section id="view-live" class="view-section active">
         
         <div class="kpi-grid mb-4">
@@ -85,7 +87,7 @@
             <div class="campus-map-container" id="stats-map-container">
               <div class="zoom-target" id="stats-zoom-target">
                   <div class="image-wrapper" id="map-image-wrapper">
-                      <img src="2.png" alt="TUPV Campus Map" class="responsive-map-img" draggable="false">
+                      <img src="2.jpg" alt="TUPV Campus Map" class="responsive-map-img" draggable="false">
                       <div id="dynamic-map-pins"></div>
                   </div>
               </div>
@@ -125,6 +127,7 @@
         </div>
       </section>
 
+      <!-- VIEW 2: INDIVIDUAL NODE ANALYTICS -->
       <section id="view-nodes" class="view-section">
         
         <div class="panel-header-flex mb-4" style="align-items: center;">
@@ -162,6 +165,7 @@
         </div>
       </section>
 
+      <!-- VIEW 3: REFILL LOGISTICS -->
       <section id="view-refill" class="view-section">
         <div class="bento-card p-4">
           <div class="panel-header mb-4">
@@ -172,6 +176,7 @@
         </div>
       </section>
 
+      <!-- VIEW 4: DAILY SUMMARY & EXPORT -->
       <section id="view-logs" class="view-section">
         <div class="bento-card p-4">
             <div class="panel-header-flex mb-4">
@@ -205,6 +210,7 @@
     </main>
   </div>
 
+  <!-- PROFESSIONAL COMMAND BAR -->
   <div id="placementModeBanner" class="placement-banner hidden">
     <div class="banner-content">
         <span class="pulse-dot-white"></span>
@@ -213,6 +219,7 @@
     <button class="btn-cancel-placement" onclick="cancelPlacementMode()">Cancel</button>
   </div>
 
+  <!-- REDESIGNED EDIT NODE PROFILE MODAL (NO MANUAL COORDS) -->
   <div class="admin-overlay hidden" id="editNodeModal">
     <div class="bento-card modal-box">
       <div class="modal-header">
@@ -255,6 +262,7 @@
     </div>
   </div>
 
+  <!-- ADD NEW NODE MODAL -->
   <div class="admin-overlay hidden" id="addNodeModal">
     <div class="bento-card modal-box">
       <div class="modal-header">
